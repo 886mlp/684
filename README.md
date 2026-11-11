@@ -35,9 +35,9 @@ body:before,body:after{content:"";position:fixed;z-index:-1;pointer-events:none;
     <div class="drop-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 16V4"/><path d="M7 9l5-5 5 5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></div>
     <strong>拖拽音频或视频文件到这里</strong>
     <span class="hint">点击选择文件 · 支持批量添加 · 自动提取视频中的第一条音轨</span>
-    <span class="formats">MP3 · WAV · FLAC · AAC · ALAC · APE · WavPack · TTA · TAK · DSF · OGG · OPUS · WMA · AC3 · E-AC3 · DTS · TrueHD · AMR · AIFF · AU · CAF · ATRAC · Musepack · RealAudio · OMA · QOA · DSS · BRSTM · BFSTM · MP4 · MKV · MOV · AVI · WebM · WMV · FLV · TS · MXF</span>
+    <span class="formats">MP3 · WAV · FLAC · AAC · ALAC · APE · WavPack · TTA · TAK · DSF · OGG · OPUS · WMA · AC3 · E-AC3 · DTS · TrueHD · AMR · AIFF · AU · CAF · ATRAC · Musepack · 网易云 NCM · RealAudio · OMA · QOA · DSS · BRSTM · BFSTM · MP4 · MKV · MOV · AVI · WebM · WMV · FLV · TS · MXF</span>
   </div>
-  <input type="file" id="picker" multiple accept="audio/*,video/*,.mp1,.mp2,.mp3,.wav,.wave,.bwf,.rf64,.w64,.flac,.fla,.m4a,.m4b,.m4r,.aac,.adts,.ogg,.oga,.opus,.spx,.wma,.asf,.ape,.wv,.tta,.tak,.aif,.aiff,.aifc,.caf,.au,.snd,.ac3,.eac3,.dts,.thd,.mlp,.amr,.awb,.gsm,.ra,.ram,.rm,.rmvb,.mka,.mkv,.mp4,.mov,.qt,.avi,.webm,.wmv,.flv,.f4v,.3gp,.3g2,.mpeg,.mpg,.m2ts,.mts,.ts,.vob,.mxf,.dv,.dsf,.oma,.aa3,.at3,.mpc,.mpp,.vqf,.qcp,.xwma,.shorten,.aea,.brstm,.bfstm,.voc,.dss,.qoa,.sbc,.acm,.bik,.binka,.roq,.sol,.xa,.str,.smk,.vmd,.ipmovie,.wtv">
+  <input type="file" id="picker" multiple accept="audio/*,video/*,.ncm,.mp1,.mp2,.mp3,.wav,.wave,.bwf,.rf64,.w64,.flac,.fla,.m4a,.m4b,.m4r,.aac,.adts,.ogg,.oga,.opus,.spx,.wma,.asf,.ape,.wv,.tta,.tak,.aif,.aiff,.aifc,.caf,.au,.snd,.ac3,.eac3,.dts,.thd,.mlp,.amr,.awb,.gsm,.ra,.ram,.rm,.rmvb,.mka,.mkv,.mp4,.mov,.qt,.avi,.webm,.wmv,.flv,.f4v,.3gp,.3g2,.mpeg,.mpg,.m2ts,.mts,.ts,.vob,.mxf,.dv,.dsf,.oma,.aa3,.at3,.mpc,.mpp,.vqf,.qcp,.xwma,.shorten,.aea,.brstm,.bfstm,.voc,.dss,.qoa,.sbc,.acm,.bik,.binka,.roq,.sol,.xa,.str,.smk,.vmd,.ipmovie,.wtv">
 </section>
 <div class="cfg">
   <label class="field"><span>输出码率</span><select id="bitrate"><option value="96">96 kbps · 小体积</option><option value="128">128 kbps · 标准</option><option value="192" selected>192 kbps · 推荐</option><option value="256">256 kbps · 高音质</option><option value="320">320 kbps · 最高码率</option></select></label>
@@ -56,9 +56,9 @@ body:before,body:after{content:"";position:fixed;z-index:-1;pointer-events:none;
 <div class="notes">
   <h3>格式与转换说明</h3>
   <p><strong>双引擎解码：</strong>常见格式优先使用浏览器原生快速解码；原生不支持时调用FFmpeg WebAssembly 兼容解码器。MP3 编码由 LAME 在本机完成。</p>
-  <p><strong>扩展格式范围：</strong><span class="tag">MP3 / MP2</span><span class="tag">WAV / AIFF / CAF</span><span class="tag">FLAC / ALAC</span><span class="tag">APE / WV / TTA / TAK</span><span class="tag">AAC / Vorbis / Opus</span><span class="tag">WMA / AMR / GSM</span><span class="tag">AC3 / E-AC3 / DTS / TrueHD</span><span class="tag">ATRAC / Musepack / TwinVQ</span><span class="tag">DSF / OMA / QOA / DSS</span><span class="tag">MP4 / MKV / MOV / AVI / WebM</span><span class="tag">FLV / WMV / TS / MXF</span></p>
+  <p><strong>扩展格式范围：</strong><span class="tag">MP3 / MP2</span><span class="tag">WAV / AIFF / CAF</span><span class="tag">FLAC / ALAC</span><span class="tag">APE / WV / TTA / TAK</span><span class="tag">AAC / Vorbis / Opus</span><span class="tag">WMA / AMR / GSM</span><span class="tag">AC3 / E-AC3 / DTS / TrueHD</span><span class="tag">网易云 NCM（本地解密）</span><span class="tag">ATRAC / Musepack / TwinVQ</span><span class="tag">DSF / OMA / QOA / DSS</span><span class="tag">MP4 / MKV / MOV / AVI / WebM</span><span class="tag">FLV / WMV / TS / MXF</span></p>
   <p><strong>本地隐私：</strong>音频文件在当前设备内处理，不会上传到转换服务器。首次使用扩展引擎需要联网下载 WebAssembly 组件，加载后浏览器通常会缓存。</p>
-  <p><strong>格式边界：</strong>不能承诺所有软件的私有格式均可读取。DRM/版权加密文件、音乐平台离线缓存（如受保护的 NCM/QMC/KGM/加密 AAC 等）、损坏文件不会被解密或绕过保护。MIDI 是乐谱事件数据而不是录制好的音频，需要音源合成，因此不在直接转换范围内。</p>
+  <p><strong>格式边界：</strong>不能承诺所有软件的私有格式均可读取。网易云 NCM：支持标准 NCM 文件在本地解密后转码；其他平台 DRM/版权保护文件（如 QMC/KGM/受保护 AAC）不会被解密或绕过保护。MIDI 是乐谱事件数据而不是录制好的音频，需要音源合成，因此不在直接转换范围内。</p>
   <p><strong>大文件提示：</strong>浏览器转换受设备内存、CPU 和 WebAssembly 限制。超长录音或超大视频建议使用桌面浏览器，转换时保持页面开启。</p>
 </div>
 </div>
@@ -82,6 +82,38 @@ function fmtSize(bytes){if(!bytes)return'0 B';const units=['B','KB','MB','GB'];l
 function snapRate(rate){let best=RATES[0];for(const value of RATES)if(Math.abs(value-rate)<Math.abs(best-rate))best=value;return best;}
 function getAudioContext(){if(!audioContext){const Ctx=window.AudioContext||window.webkitAudioContext;if(!Ctx)throw new Error('当前浏览器不支持 Web Audio');try{audioContext=new Ctx({sampleRate:44100});}catch(_){audioContext=new Ctx();}}if(audioContext.state==='suspended')audioContext.resume().catch(()=>{});return audioContext;}
 function decodeNative(file){return new Promise((resolve,reject)=>{const ctx=getAudioContext();file.arrayBuffer().then(buffer=>{let settled=false;const ok=value=>{if(!settled){settled=true;resolve(value);}};const bad=error=>{if(!settled){settled=true;reject(error||new Error('浏览器原生解码失败'));}};try{const result=ctx.decodeAudioData(buffer.slice(0),ok,bad);if(result&&typeof result.then==='function')result.then(ok,bad);}catch(error){bad(error);}}).catch(reject);});}
+
+async function decodeViaMediaElement(file,item){
+ const ctx=getAudioContext();
+ if(!ctx.createMediaElementSource||!ctx.createScriptProcessor)throw new Error('当前浏览器不支持媒体元素解码回退');
+ const url=URL.createObjectURL(file),audio=document.createElement('audio');
+ audio.preload='auto';audio.playsInline=true;audio.src=url;
+ const source=ctx.createMediaElementSource(audio),processor=ctx.createScriptProcessor(4096,2,2),gain=ctx.createGain();
+ gain.gain.value=0;source.connect(processor);processor.connect(gain);gain.connect(ctx.destination);
+ const chunks=[[],[]];let total=0,failed=false;
+ const cleanup=()=>{processor.onaudioprocess=null;try{source.disconnect();processor.disconnect();gain.disconnect();}catch(_){}audio.pause();audio.removeAttribute('src');audio.load();URL.revokeObjectURL(url);};
+ try{
+  await new Promise((resolve,reject)=>{
+   const timer=setTimeout(()=>reject(new Error('浏览器媒体解码超时')),30000);
+   audio.oncanplay=async()=>{try{if(ctx.state==='suspended')await ctx.resume();await audio.play();}catch(e){clearTimeout(timer);reject(e);}};
+   audio.onerror=()=>{clearTimeout(timer);reject(new Error('浏览器不支持 NCM 内部音频编码'));};
+   audio.onended=()=>{clearTimeout(timer);resolve();};
+   processor.onaudioprocess=event=>{
+    if(failed)return;
+    const l=event.inputBuffer.getChannelData(0),r=event.inputBuffer.numberOfChannels>1?event.inputBuffer.getChannelData(1):l;
+    chunks[0].push(new Float32Array(l));chunks[1].push(new Float32Array(r));total+=l.length;
+    if(total*8>700*1024*1024){failed=true;audio.pause();}
+    if(item&&total%262144<4096){item.stage='浏览器媒体解码';item.progress=Math.min(.5,.1+audio.currentTime/Math.max(1,audio.duration)*.4);updateRow(item);}
+   };
+   audio.load();
+  });
+  if(failed)throw new Error('解码后的 PCM 数据过大，手机内存不足');
+  if(!total)throw new Error('浏览器媒体解码没有输出音频');
+  const channels=chunks.map(parts=>{const out=new Float32Array(total);let offset=0;for(const part of parts){out.set(part,offset);offset+=part.length;}return out;});
+  return makeBufferView(ctx.sampleRate,channels);
+ }finally{cleanup();}
+}
+
 function makeBufferView(sampleRate,channelData){return{sampleRate,numberOfChannels:channelData.length,getChannelData(index){return channelData[index];}};}
 async function getWasmpeg(){if(wasmpegModule)return wasmpegModule;if(!wasmpegPromise){setEngineStatus('加载扩展格式引擎','loading');wasmpegPromise=(async()=>{const module=await import('https://esm.sh/wasmpeg@1.0.0');const api=module.default||module;await api.load();wasmpegModule=api;setEngineStatus('扩展格式引擎就绪','');return api;})();}try{return await wasmpegPromise;}catch(error){wasmpegPromise=null;setEngineStatus('扩展引擎暂不可用','error');throw error;}}
 async function decodeWithWasmpeg(file,item){const api=await getWasmpeg();item.stage='识别媒体与音轨';item.progress=.04;updateRow(item);const info=await api.probe(file);if(!info.audio||info.audio.channels<=0)throw new Error('文件中没有可读取的音轨');item.duration=Number(info.duration)||0;const decoder=await api.decodeAudio(file);const sourceChannels=decoder.channels,sourceRate=decoder.sampleRate;const chunks=[];let totalSamples=0,chunk;try{while((chunk=decoder.nextSamples())){if(chunk.length){chunks.push(chunk);totalSamples+=chunk.length;}if(totalSamples*4>650*1024*1024)throw new Error('解码后的 PCM 数据过大，请缩短音频或使用桌面软件');if(item.duration>0){const frames=totalSamples/sourceChannels;item.progress=Math.min(.48,.05+.42*frames/(item.duration*sourceRate));item.stage='扩展格式解码';updateRow(item);}else if(chunks.length%12===0){item.stage='扩展格式解码';item.progress=Math.min(.45,.05+chunks.length/800);updateRow(item);await waitFrame();}}}finally{decoder.close();}
@@ -97,11 +129,59 @@ async function encodeMp3(data,rate,kbps,onProgress){const bytes=data.reduce((n,c
 function markDone(item,blob,rate,kbps,channelCount){item.blob=blob;item.outSize=blob.size;item.outName=(item.name.replace(/\.[^./\\]+$/,'')||'audio')+'.mp3';item.outRate=rate;item.outKbps=kbps;item.outCh=channelCount;item.status='done';item.progress=1;updateRow(item);}
 async function convertDecoded(item,decoded,progressStart){const rateChoice=samplerate.value;let rate=rateChoice==='auto'?snapRate(decoded.sampleRate):parseInt(rateChoice,10);if(!RATES.includes(rate))rate=snapRate(rate);const channelChoice=channels.value,targetChannels=channelChoice==='mono'?1:channelChoice==='stereo'?2:Math.min(2,decoded.numberOfChannels);let kbps=parseInt(bitrate.value,10)||192;if(rate<32000)kbps=Math.min(kbps,160);const encodeStart=Math.max(item.progress,progressStart||.12);item.stage='MP3 编码';item.progress=encodeStart;updateRow(item);const prepared=prepareChannels(decoded,targetChannels,rate);const blob=await encodeMp3(prepared,rate,kbps,p=>{item.progress=encodeStart+(.98-encodeStart)*p;updateRow(item);});markDone(item,blob,rate,kbps,prepared.length);}
 async function getFFmpeg(){if(ffmpegModule)return ffmpegModule;if(!ffmpegPromise){setEngineStatus('加载 FFmpeg 兼容引擎','loading');ffmpegPromise=(async()=>{let pkg,util;try{pkg=await import('https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/esm/index.js');util=await import('https://cdn.jsdelivr.net/npm/@ffmpeg/util@0.12.1/dist/esm/index.js');}catch(firstError){pkg=await import('https://esm.sh/@ffmpeg/ffmpeg@0.12.10?bundle');util=await import('https://esm.sh/@ffmpeg/util@0.12.1?bundle');}const engine=new pkg.FFmpeg();const base='https://cdn.jsdelivr.net/npm/@ffmpeg/core@0.12.10/dist/umd';await engine.load({coreURL:await util.toBlobURL(base+'/ffmpeg-core.js','text/javascript'),wasmURL:await util.toBlobURL(base+'/ffmpeg-core.wasm','application/wasm')});ffmpegModule=engine;setEngineStatus('FFmpeg 兼容引擎就绪','');return engine;})();}try{return await ffmpegPromise;}catch(error){ffmpegPromise=null;setEngineStatus('兼容引擎加载失败','error');throw error;}}
-async function convertWithFFmpeg(item){const engine=await getFFmpeg();const ext=(item.name.split('.').pop()||'bin').toLowerCase().replace(/[^a-z0-9]/g,'').slice(0,8)||'bin';const input='source_'+item.uid+'.'+ext,output='result_'+item.uid+'.mp3';const rateChoice=samplerate.value,kbps=parseInt(bitrate.value,10)||192;const args=['-hide_banner','-loglevel','error','-y','-i',input,'-map','0:a:0','-vn','-sn','-dn','-codec:a','libmp3lame','-b:a',kbps+'k'];if(rateChoice!=='auto')args.push('-ar',String(parseInt(rateChoice,10)));if(channels.value==='mono')args.push('-ac','1');else if(channels.value==='stereo')args.push('-ac','2');const progressHandler=event=>{if(event&&Number.isFinite(event.progress)){item.progress=Math.max(.1,Math.min(.96,.1+event.progress*.86));updateRow(item);}};engine.on('progress',progressHandler);try{item.stage='FFmpeg 解码与编码';item.progress=.1;updateRow(item);await engine.writeFile(input,new Uint8Array(await item.file.arrayBuffer()));const code=await engine.exec(args.concat([output]));if(code!==0)throw new Error('FFmpeg 未能读取此文件或文件没有可用音轨');const data=await engine.readFile(output);const blob=new Blob([data],{type:'audio/mpeg'});if(!blob.size)throw new Error('没有生成有效 MP3 数据');const rate=rateChoice==='auto'?44100:parseInt(rateChoice,10);markDone(item,blob,rate,kbps,channels.value==='mono'?1:channels.value==='stereo'?2:0);}finally{try{engine.off('progress',progressHandler);}catch(_){}try{await engine.deleteFile(input);}catch(_){}try{await engine.deleteFile(output);}catch(_){}}}
+async function convertWithFFmpeg(item){const engine=await getFFmpeg();const sourceFile=item.sourceFile||item.file;const sourceName=item.sourceName||item.name;const ext=(sourceName.split('.').pop()||'bin').toLowerCase().replace(/[^a-z0-9]/g,'').slice(0,8)||'bin';const input='source_'+item.uid+'.'+ext,output='result_'+item.uid+'.mp3';const rateChoice=samplerate.value,kbps=parseInt(bitrate.value,10)||192;const args=['-hide_banner','-loglevel','error','-y','-i',input,'-map','0:a:0','-vn','-sn','-dn','-codec:a','libmp3lame','-b:a',kbps+'k'];if(rateChoice!=='auto')args.push('-ar',String(parseInt(rateChoice,10)));if(channels.value==='mono')args.push('-ac','1');else if(channels.value==='stereo')args.push('-ac','2');const progressHandler=event=>{if(event&&Number.isFinite(event.progress)){item.progress=Math.max(.1,Math.min(.96,.1+event.progress*.86));updateRow(item);}};engine.on('progress',progressHandler);try{item.stage='FFmpeg 解码与编码';item.progress=.1;updateRow(item);await engine.writeFile(input,new Uint8Array(await sourceFile.arrayBuffer()));const code=await engine.exec(args.concat([output]));if(code!==0)throw new Error('FFmpeg 未能读取此文件或文件没有可用音轨');const data=await engine.readFile(output);const blob=new Blob([data],{type:'audio/mpeg'});if(!blob.size)throw new Error('没有生成有效 MP3 数据');const rate=rateChoice==='auto'?44100:parseInt(rateChoice,10);markDone(item,blob,rate,kbps,channels.value==='mono'?1:channels.value==='stereo'?2:0);}finally{try{engine.off('progress',progressHandler);}catch(_){}try{await engine.deleteFile(input);}catch(_){}try{await engine.deleteFile(output);}catch(_){}}}
 let lameLoadPromise=null;
 async function ensureLame(){if(window.lamejs&&window.lamejs.Mp3Encoder)return;if(!lameLoadPromise){lameLoadPromise=(async()=>{for(const src of ['https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.min.js','https://unpkg.com/lamejs@1.2.1/lame.min.js']){try{await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=()=>{script.remove();reject(new Error('LAME CDN load failed'));};document.head.appendChild(script);});if(window.lamejs&&window.lamejs.Mp3Encoder)return;}catch(_){}}throw new Error('MP3 编码器加载失败：请检查网络或 CDN 访问');})();}try{await lameLoadPromise;}catch(error){lameLoadPromise=null;throw error;}}
-function mapError(error){const message=error&&error.message?error.message:String(error||'');if(/memory|allocation|too large|过大/i.test(message))return'内存不足或文件过大，请缩短文件后重试';if(/DRM|protected|encrypted|加密|版权/i.test(message))return'文件受加密或版权保护，无法直接读取';if(/no audio|音轨|audio stream/i.test(message))return'文件中没有可读取的音轨';if(/decoder not found|not found|unsupported|invalid data|无法识别/i.test(message))return'此编码暂不在当前引擎支持范围内，或文件已损坏';if(/WASM|WebAssembly|SIMD|wasm/i.test(message))return'兼容解码组件加载失败，请检查网络后重试';return message.slice(0,120)||'未知错误';}
-async function convertOne(item,index,total){item.status='working';item.stage='读取文件';item.progress=.01;updateRow(item);setStartLabel('转换中 '+(index+1)+'/'+total);refresh();try{await ensureLame();let decoded=null;try{item.stage='浏览器快速解码';item.progress=.04;updateRow(item);decoded=await decodeNative(item.file);}catch(nativeError){item.stage='加载 FFmpeg 兼容解码器';item.progress=.12;updateRow(item);await convertWithFFmpeg(item);return;}item.duration=decoded.duration||item.duration||0;await convertDecoded(item,decoded,.12);}catch(error){item.status='error';item.error=mapError(error);item.progress=1;updateRow(item);}refresh();}
+let cryptoJsPromise=null;
+async function ensureCryptoJS(){if(window.CryptoJS&&window.CryptoJS.AES)return window.CryptoJS;if(!cryptoJsPromise){cryptoJsPromise=(async()=>{for(const src of ['https://cdn.jsdelivr.net/npm/crypto-js@4.2.0/crypto-js.min.js','https://unpkg.com/crypto-js@4.2.0/crypto-js.js']){try{await new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=()=>{script.remove();reject(new Error('CryptoJS CDN load failed'));};document.head.appendChild(script);});if(window.CryptoJS&&window.CryptoJS.AES)return window.CryptoJS;}catch(_){}}throw new Error('NCM 解密组件加载失败，请检查网络');})();}try{return await cryptoJsPromise;}catch(error){cryptoJsPromise=null;throw error;}}
+function bytesToWordArray(C,bytes){const words=[];for(let i=0;i<bytes.length;i++)words[i>>>2]=(words[i>>>2]||0)|(bytes[i]<<(24-(i%4)*8));return C.lib.WordArray.create(words,bytes.length);}
+function wordArrayToBytes(wordArray){const out=new Uint8Array(wordArray.sigBytes);for(let i=0;i<out.length;i++)out[i]=(wordArray.words[i>>>2]>>>(24-(i%4)*8))&255;return out;}
+function sniffNcmAudio(bytes){
+ const starts=(a)=>a.every((v,i)=>bytes[i]===v);
+ if(starts([0x66,0x4c,0x61,0x43]))return {ext:'flac',mime:'audio/flac'};
+ if(starts([0x49,0x44,0x33])||(bytes[0]===0xff&&(bytes[1]&0xe0)===0xe0))return {ext:'mp3',mime:'audio/mpeg'};
+ if(starts([0x52,0x49,0x46,0x46])&&String.fromCharCode(...bytes.subarray(8,12))==='WAVE')return {ext:'wav',mime:'audio/wav'};
+ if(starts([0x4f,0x67,0x67,0x53]))return {ext:'ogg',mime:'audio/ogg'};
+ if(starts([0x66,0x74,0x79,0x70]))return {ext:'m4a',mime:'audio/mp4'};
+ if(starts([0x52,0x49,0x46,0x46])&&String.fromCharCode(...bytes.subarray(8,12))==='WEBP')return {ext:'bin',mime:'application/octet-stream'};
+ return {ext:'bin',mime:'application/octet-stream'};
+}
+async function decryptNcm(file,item){
+ const data=new Uint8Array(await file.arrayBuffer());
+ if(data.length<10||String.fromCharCode(...data.subarray(0,8))!=='CTENFDAM')throw new Error('不是有效的网易云 NCM 文件');
+ let pos=10;
+ const readU32=()=>{if(pos+4>data.length)throw new Error('NCM 文件结构不完整');const n=(data[pos]|data[pos+1]<<8|data[pos+2]<<16|data[pos+3]<<24)>>>0;pos+=4;return n;};
+ const keyLen=readU32();
+ if(!keyLen||keyLen>data.length-pos||keyLen>1024*1024)throw new Error('NCM 密钥区长度异常');
+ const keyData=data.slice(pos,pos+keyLen);pos+=keyLen;
+ for(let i=0;i<keyData.length;i++)keyData[i]^=0x64;
+ const C=await ensureCryptoJS();
+ const coreKey=C.enc.Hex.parse('687A4852416D736F356B496E62617857');
+ const decrypted=C.AES.decrypt({ciphertext:bytesToWordArray(C,keyData)},coreKey,{mode:C.mode.ECB,padding:C.pad.Pkcs7});
+ const keyBytes=wordArrayToBytes(decrypted);
+ const keyPrefix=new TextEncoder().encode('neteasecloudmusic');
+ if(keyBytes.length<=keyPrefix.length)throw new Error('NCM 密钥解密失败：密钥数据不完整');
+ const musicKey=keyBytes.slice(keyPrefix.length);
+ const box=new Uint8Array(256);for(let i=0;i<256;i++)box[i]=i;
+ let j=0;for(let i=0;i<256;i++){j=(j+box[i]+musicKey[i%musicKey.length])&255;const t=box[i];box[i]=box[j];box[j]=t;}
+ const metaLen=readU32();if(metaLen>data.length-pos)throw new Error('NCM 元数据区长度异常');pos+=metaLen;
+ // NCM 音频段前依次为 CRC32(4) + 保留字段(5) + 封面长度(4)
+ if(pos+13>data.length)throw new Error('NCM 音频区头部不完整');
+ pos+=9;const imageLen=readU32();
+ if(imageLen>data.length-pos)throw new Error('NCM 封面区长度异常');
+ pos+=imageLen;const audio=data.slice(pos);
+ if(!audio.length)throw new Error('NCM 文件没有音频数据');
+ for(let i=0;i<audio.length;i++){const k=(i+1)&255;audio[i]^=box[(box[k]+box[(k+box[k])&255])&255];}
+ const format=sniffNcmAudio(audio);
+ if(format.ext==='bin')throw new Error('NCM 已解密，但无法识别内部音频编码；文件可能损坏或使用了非标准封装');
+ item.stage='NCM 解密完成 · '+format.ext.toUpperCase();item.progress=.09;updateRow(item);
+ const cleanName=(file.name.replace(/\.ncm$/i,'')||'netease-audio').replace(/\.[^.]+$/,'');
+ const outputName=cleanName+'.'+format.ext;
+ item.ncmFormat=format.ext;
+ return new File([audio],outputName,{type:format.mime});
+}
+function mapError(error){const message=error&&error.message?error.message:String(error||'');if(/memory|allocation|too large|过大/i.test(message))return'内存不足或文件过大，请缩短文件后重试';if(/DRM|protected|encrypted|加密|版权/i.test(message))return'文件受加密或版权保护，无法直接读取';if(/no audio|音轨|audio stream/i.test(message))return'文件中没有可读取的音轨';if(/decoder not found|not found|unsupported|invalid data|无法识别/i.test(message))return'此编码暂不在当前引擎支持范围内，或文件已损坏';if(/Failed to construct .Worker.|worker.*(script|security|CSP)|script.*worker|Worker.*origin/i.test(message))return'手机浏览器阻止了兼容解码 Worker。NCM 已解密但当前浏览器无法继续解码，请尝试最新版 Chrome，或使用电脑浏览器。';if(/WASM|WebAssembly|SIMD|wasm/i.test(message))return'兼容解码组件加载失败，请检查网络后重试';return message.slice(0,120)||'未知错误';}
+async function convertOne(item,index,total){item.status='working';item.stage='读取文件';item.progress=.01;updateRow(item);setStartLabel('转换中 '+(index+1)+'/'+total);refresh();try{await ensureLame();item.sourceFile=item.file;item.sourceName=item.name;if(/\.ncm$/i.test(item.name)){item.stage='解密网易云 NCM';item.progress=.03;updateRow(item);item.sourceFile=await decryptNcm(item.file,item);item.sourceName=item.sourceFile.name;}let decoded=null;try{item.stage='浏览器快速解码';item.progress=Math.max(item.progress,.1);updateRow(item);decoded=await decodeNative(item.sourceFile);}catch(nativeError){try{item.stage='尝试浏览器媒体解码';item.progress=Math.max(item.progress,.12);updateRow(item);decoded=await decodeViaMediaElement(item.sourceFile,item);}catch(mediaError){item.stage='加载 FFmpeg 兼容解码器';item.progress=Math.max(item.progress,.12);updateRow(item);await convertWithFFmpeg(item);return;}}item.duration=decoded.duration||item.duration||0;await convertDecoded(item,decoded,.12);}catch(error){item.status='error';item.error=mapError(error);item.progress=1;updateRow(item);}finally{item.sourceFile=null;item.sourceName=null;}refresh();}
 function setStartLabel(label){const span=btnStart.querySelector('span');if(span)span.textContent=label;}
 function makeRow(item){const element=document.createElement('div');element.className='row';const badge=document.createElement('div');badge.className='badge';const meta=document.createElement('div');meta.className='meta';const name=document.createElement('div');name.className='name';name.textContent=item.name;const detail=document.createElement('div');detail.className='detail';const bar=document.createElement('div');bar.className='bar';const fill=document.createElement('i');bar.appendChild(fill);meta.append(name,detail,bar);const tail=document.createElement('div');tail.className='tail';const download=document.createElement('button');download.className='dl-btn';download.textContent='下载 MP3';const remove=document.createElement('button');remove.className='icon-btn';remove.type='button';remove.setAttribute('aria-label','移除文件');remove.innerHTML='<svg viewBox="0 0 24 24"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></svg>';tail.append(download,remove);element.append(badge,meta,tail);download.addEventListener('click',()=>downloadOne(item));remove.addEventListener('click',()=>{if(item.status==='working'){toast('当前文件正在转换');return;}const index=state.items.indexOf(item);if(index>=0)state.items.splice(index,1);element.remove();refresh();});item.dom={element,badge,detail,bar,fill,download,remove};return element;}
 function updateRow(item){if(!item.dom)return;const d=item.dom;d.badge.className='badge'+(item.status==='done'?' done':'')+(item.status==='error'?' bad':'');d.badge.textContent=item.status==='done'?'MP3':item.ext;d.detail.className='detail';d.bar.className='bar';d.download.className='dl-btn';if(item.status==='ready'){d.detail.textContent=fmtSize(item.size)+' · 待转换';}else if(item.status==='working'){d.detail.textContent=item.stage+' · '+Math.round(item.progress*100)+'%';d.bar.classList.add('on');d.fill.style.width=(item.progress*100)+'%';}else if(item.status==='done'){d.detail.textContent='转换完成 · '+fmtSize(item.outSize)+' · '+(item.outRate/1000)+' kHz / '+item.outKbps+' kbps';d.detail.classList.add('ok');d.download.classList.add('on');}else if(item.status==='error'){d.detail.textContent='失败 · '+item.error;d.detail.classList.add('err');}d.remove.style.visibility=item.status==='working'?'hidden':'visible';}
